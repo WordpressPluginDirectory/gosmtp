@@ -3,7 +3,7 @@
 Plugin Name: GoSMTP
 Plugin URI: https://gosmtp.net
 Description: Send emails from your WordPress site using your preferred SMTP provider like Gmail, Outlook, AWS, Zoho, SMTP.com, Sendinblue, Mailgun, Postmark, Sendgrid, Sparkpost, Sendlayer or any custom SMTP provider.
-Version: 1.0.6
+Version: 1.0.8
 Author: Softaculous Team
 Author URI: https://softaculous.com
 Text Domain: gosmtp
@@ -38,11 +38,29 @@ if(!function_exists('add_action')){
 	exit;
 }
 
-$_tmp_plugins = get_option('active_plugins');
+$gosmtp_tmp_plugins = get_option('active_plugins', []);
 
-// Is the premium plugin loaded ?
-if(in_array('gosmtp-pro/gosmtp-pro.php', $_tmp_plugins)){
-	return;
+if(!defined('SITEPAD') && in_array('gosmtp-pro/gosmtp-pro.php', $gosmtp_tmp_plugins)){
+
+	// Was introduced in 1.0.7
+	$gosmtp_pro_info = get_option('gosmtp_pro_version');
+	
+	if(!empty($gosmtp_pro_info) && version_compare($gosmtp_pro_info, '1.0.7', '>=')){
+		// Let GoSMTP load
+	
+	// Lets check for older versions
+	}else{
+
+		if(!function_exists('get_plugin_data')){
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		$gosmtp_pro_info = get_plugin_data(WP_PLUGIN_DIR . '/gosmtp-pro/gosmtp-pro.php');
+		
+		if(!empty($gosmtp_pro_info) && version_compare($gosmtp_pro_info['Version'], '1.0.7', '<')){
+			return;
+		}
+	}
 }
 
 // If GOSMTP_VERSION exists then the plugin is loaded already !
