@@ -2,9 +2,9 @@
 Contributors: softaculous, pagelayer
 Tags: smtp, wordpress smtp, gmail smtp, sendgrid smtp, aws smtp, gmail, outlook, zoho, aws, postmark, sparkpost, mail, mailer, phpmailer, wp_mail, email, mailgun, sendgrid, gmail, sendinblue, wp smtp, sendlayer
 Requires at least: 5.5
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.5
-Stable tag: 1.0.9
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,6 +81,12 @@ Go To your WordPress install -> Plugins -> Add New Button -> In Search Box searc
 4. **Email Logs Wizard** check the emails sent with this wizard.
 
 == Changelog ==
+
+= 1.1.1 (Nov 18, 2024) =
+* [Task] Licensing functionality has been further improved.
+
+= 1.1.0 (Oct 29, 2024) =
+* [Bug-Fix] In some cases, license loading was not working properly. This is fixed.
 
 = 1.0.9 (Oct 21, 2024) =
 * [Task] Licensing functionality has been further improved
