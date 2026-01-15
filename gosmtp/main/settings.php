@@ -280,7 +280,12 @@ function gosmtp_settings_page(){
 			$msg['success'] = 1;
 		}
 	}
-	
+
+	// Save Notification Settings
+	if(defined('GOSMTP_PRO_VERSION') && isset($_REQUEST['save_notification_settings'])){
+		do_action('gosmtp_pro_save_notification_settings');
+	}
+
 	// SMTP Settings
 	if(isset($_REQUEST['save_settings'])){
 
@@ -373,6 +378,9 @@ function gosmtp_settings_page(){
 		$smtp_options['mailer'] = [];
 		$smtp_options['mailer'][0]['mail_type'] = 'mail';
 	} 
+	
+	// Used to show error / success message for the settings
+	settings_errors();
 
 	echo '<div class="wrap">';
 	
