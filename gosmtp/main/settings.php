@@ -24,12 +24,15 @@ function gosmtp_page_header($title = 'GoSMTP'){
 			<tr>
 				<td valign="top">
 					<h1>'.esc_html($title).'</h1>
-				</td>
-				'.($promos ? '
-				<td align="right"><a target="_blank" class="button button-primary" href="https://wordpress.org/support/view/plugin-reviews/gosmtp">Review GoSMTP</a></td>' : '').'
-				<td align="right" width="40"><a target="_blank" href="https://twitter.com/gosmtp"><img src="'.GOSMTP_URL.'/images/twitter.png" /></a></td>
-				<td align="right" width="40"><a target="_blank" href="https://www.facebook.com/gosmtp/"><img src="'.GOSMTP_URL.'/images/facebook.png" /></a></td>
-			</tr>
+				</td>';
+				
+				if(!defined('SITEPAD')){
+					echo ($promos ? '
+					<td align="right"><a target="_blank" class="button button-primary" href="https://wordpress.org/support/view/plugin-reviews/gosmtp">Review GoSMTP</a></td>' : '').'
+					<td align="right" width="40"><a target="_blank" href="https://twitter.com/gosmtp"><img src="'.GOSMTP_URL.'/images/twitter.png" /></a></td>
+					<td align="right" width="40"><a target="_blank" href="https://www.facebook.com/gosmtp/"><img src="'.GOSMTP_URL.'/images/facebook.png" /></a></td>';
+				}				
+			echo '</tr>
 		</table>
 	</h2>
 	'.gosmtp_show_notices().'

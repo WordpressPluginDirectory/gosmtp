@@ -4,7 +4,7 @@ Tags: smtp, wordpress smtp, gmail smtp, sendgrid smtp, aws smtp, gmail, outlook,
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.5
-Stable tag: 1.1.7
+Stable tag: 1.1.9
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -87,6 +87,16 @@ Go To your WordPress install -> Plugins -> Add New Button -> In Search Box searc
 4. **Email Logs Wizard** check the emails sent with this wizard.
 
 == Changelog ==
+= 1.1.9 (Feb 25, 2026) =
+* [Pro-Feature] Support for notification service Pushover has been added.
+* [Pro-Feature] Support for notification service Webhook has been added.
+* [Task] Minor improvements.
+* [Bug-Fix] Access Token was resetting after saving settings. This is fixed.
+* [Bug-Fix] Weekly Email Reports template was not showing properly on mobile view. This is fixed.
+
+= 1.1.8 (Jan 28, 2026) =
+* [Bug-Fix] Error was observed while sending mail from contact forms on enabling notification service. This is fixed.
+
 = 1.1.7 (Jan 14, 2026) =
 * [Pro-Feature] Support for email provider Resend has been added.
 * [Pro-Feature] Support for email provider MailerSend has been added.
